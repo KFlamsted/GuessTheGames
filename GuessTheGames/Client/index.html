@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<script language="JavaScript" type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+    <div id="body">
+        <ul id="user"></ul>
+    </div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function () {
+        $.getJSON('/api/user', function (userJsonPayload) {
+            $(userJsonPayload).each(function (i, item) {
+                $('#user').append('<li>' + item.email_addr + '</li>');
+            });
+        });
+    });
+</script>
+
