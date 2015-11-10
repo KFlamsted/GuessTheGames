@@ -23,10 +23,22 @@ namespace GuessTheGames.Services
             return users; 
         }
 
+        //method finding user by user id
         public User GetUser(int id)
         {
             List<User> users = new List<User>();
             string sqlstring = "SELECT * FROM users WHERE user_id = " + id + ";";
+            users = connectToDB(sqlstring);
+
+            //returning the first user, there should only be one.
+            return users[0];
+        }
+
+        //method finding user by email address
+        public User GetUser(string email_addr)
+        {
+            List<User> users = new List<User>();
+            string sqlstring = "SELECT * FROM users WHERE email_addr = '" + email_addr + "';";
             users = connectToDB(sqlstring);
 
             //returning the first user, there should only be one.
