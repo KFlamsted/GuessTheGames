@@ -11,18 +11,11 @@ namespace GuessTheGames.Controllers
 {
     public class UserController : ApiController
     {
-        private UserRepository userRepository;
-
-        public UserController()
-        {
-            this.userRepository = new UserRepository();
-        }
+        private UserServices us = new UserServices();
 
         public List<User> Get()
         {
-
-            return this.userRepository.GetUsers();
+            return us.GetUsers();
         }
-
     }
 }
