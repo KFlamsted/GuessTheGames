@@ -69,3 +69,5 @@ c:\users\kristian\documents\visual studio 2013\Projects\GuessTheGames\GuessTheGa
 c:\users\kristian\documents\visual studio 2013\Projects\GuessTheGames\GuessTheGames\obj\Debug\GuessTheGames.csprojResolveAssemblyReference.cache
 c:\users\kristian\documents\visual studio 2013\Projects\GuessTheGames\GuessTheGames\obj\Debug\GuessTheGames.dll
 c:\users\kristian\documents\visual studio 2013\Projects\GuessTheGames\GuessTheGames\obj\Debug\GuessTheGames.pdb
+C:\Users\Kristian\documents\visual studio 2013\Projects\GuessTheGames\GuessTheGames\bin\Npgsql.dll
+C:\Users\Kristian\documents\visual studio 2013\Projects\GuessTheGames\GuessTheGames\bin\Npgsql.xml

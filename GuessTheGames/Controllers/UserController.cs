@@ -18,7 +18,7 @@ namespace GuessTheGames.Controllers
             this.userRepository = new UserRepository();
         }
 
-        public User[] Get()
+        public List<User> Get()
         {
 
             return this.userRepository.GetUsers();
