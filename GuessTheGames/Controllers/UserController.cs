@@ -13,9 +13,15 @@ namespace GuessTheGames.Controllers
     {
         private UserServices us = new UserServices();
 
-        public List<User> Get()
+        public List<User> GetAllUsers()
         {
             return us.GetUsers();
+        }
+
+        //finding a user by id
+        public User GetUser([FromUri] int id)
+        {
+            return us.GetUser(id);
         }
     }
 }
