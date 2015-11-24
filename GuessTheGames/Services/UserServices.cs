@@ -64,7 +64,7 @@ namespace GuessTheGames.Services
                 //reading all the users.
                 while (dr.Read())
                 {
-                    tempUser = new User(dr.GetInt32(1), "Nothing", dr.GetString(2), dr.GetString(0));
+                    tempUser = new User(dr.GetInt32(1), dr.GetString(3), dr.GetString(2), dr.GetString(0));
                     users.Add(tempUser);
                 }
             }
