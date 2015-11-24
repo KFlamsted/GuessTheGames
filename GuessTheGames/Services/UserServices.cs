@@ -35,7 +35,7 @@ namespace GuessTheGames.Services
         }
 
         //method finding user by email address
-        public User GetUser(string email_addr)
+        public User GetUserFromEmail(string email_addr)
         {
             List<User> users = new List<User>();
             string sqlstring = "SELECT * FROM users WHERE email_addr = '" + email_addr + "';";
@@ -64,7 +64,7 @@ namespace GuessTheGames.Services
                 //reading all the users.
                 while (dr.Read())
                 {
-                    tempUser = new User(dr.GetInt32(1), dr.GetString(2), dr.GetString(0));
+                    tempUser = new User(dr.GetInt32(1), "Nothing", dr.GetString(2), dr.GetString(0));
                     users.Add(tempUser);
                 }
             }
