@@ -49,7 +49,7 @@ namespace GuessTheGames.Services
         private List<User> connectToDB(string sqlstring)
         {
             List<User> users = new List<User>();
-            NpgsqlConnection conn = new NpgsqlConnection("Server=127.0.0.1;Port=5432;User Id=reader;Password=hej123;Database=guessthegame;");
+            NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;User Id=reader;Password=hej123;Database=guessthegame;");
             try
             {
                 //connecting to the database

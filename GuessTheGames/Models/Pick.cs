@@ -29,7 +29,10 @@ namespace GuessTheGames.Models
         //making sure the value of pick cant be higher than 2 or below 0
         public int pick
         {
-            get;
+            get
+            {
+                return pick;
+            }
             set
             {
                 if (value > 2)

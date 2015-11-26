@@ -36,7 +36,10 @@ namespace GuessTheGames.Models
         // before this result can have a value, the game have has to be played(i.e. the game_played bool need to be true).
         public int result 
         { 
-            get;
+            get
+            {
+                return result;
+            }
             set
             {
                 //if the game haven't been played then the value should be set to -1, might not be the best solution
