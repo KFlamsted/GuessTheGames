@@ -18,7 +18,7 @@ namespace GuessTheGames.Services
 
             //creating the sql string (this example is selecting all users and info)
             string sqlstring = "SELECT * FROM public.users;";
-            users = connectToDB(sqlstring);
+            users = ReadFromDB(sqlstring);
 
             return users; 
         }
@@ -28,7 +28,7 @@ namespace GuessTheGames.Services
         {
             List<User> users = new List<User>();
             string sqlstring = "SELECT * FROM users WHERE user_id = " + id + ";";
-            users = connectToDB(sqlstring);
+            users = ReadFromDB(sqlstring);
 
             //returning the first user, there should only be one.
             return users[0];
@@ -39,14 +39,14 @@ namespace GuessTheGames.Services
         {
             List<User> users = new List<User>();
             string sqlstring = "SELECT * FROM users WHERE email_addr = '" + email_addr + "';";
-            users = connectToDB(sqlstring);
+            users = ReadFromDB(sqlstring);
 
             //returning the first user, there should only be one.
             return users[0];
         }
 
         // having a connecting to DB function with the sqlstring as input
-        private List<User> connectToDB(string sqlstring)
+        private List<User> ReadFromDB(string sqlstring)
         {
             List<User> users = new List<User>();
             NpgsqlConnection conn = new NpgsqlConnection("Server=localhost;Port=5432;User Id=reader;Password=hej123;Database=guessthegame;");

@@ -9,12 +9,13 @@ namespace GuessTheGames.Models
     {
         Dictionary<int, List<Game>> Games;
 
-        public Season(int id, DateTime start_date, DateTime end_date)
+        public Season(int id, DateTime start_date, DateTime end_date, bool is_ended)
         {
             Games = new Dictionary<int, List<Game>>();
             this.id = id;
             this.season_start_date = start_date;
             this.season_end_date = end_date;
+            this.is_ended = is_ended;
         }
 
         public int id { get; set; }
@@ -22,6 +23,8 @@ namespace GuessTheGames.Models
         public DateTime season_start_date { get; set; }
 
         public DateTime season_end_date { get; set; }
+
+        public bool is_ended { get; set; }
 
         // method for adding a game to a given round
         public void AddGame(int round, Game game)
