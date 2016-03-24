@@ -19,6 +19,15 @@ namespace GuessTheGames.Services
             return seasons;
         }
 
+        // getting a specific season by it's id in the db
+        public List<Season> GetSeasonById(int id)
+        {
+            List<Season> seasons = new List<Season>();
+            string sqlstring = "SELECT * FROM seasons WHERE id = " + id + ";";
+            seasons = ReadFromDB(sqlstring);
+            return seasons;
+        }
+
         // getting all the already played seasons
         public List<Season> GetPlayedSeasons()
         {

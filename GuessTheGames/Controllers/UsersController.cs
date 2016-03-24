@@ -28,7 +28,7 @@ namespace GuessTheGames.Controllers
             return us.GetUser(id);
         }
 
-        //finding a user by email address 'GET api/users/emailaddress/
+        //finding a user by email address 'GET api/users/byemail/<emailaddress>/
         [HttpGet]
         public User ByEmail(string id)
         {
