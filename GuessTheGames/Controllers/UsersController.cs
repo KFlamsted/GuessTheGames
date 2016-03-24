@@ -16,14 +16,14 @@ namespace GuessTheGames.Controllers
 
         //Get all users 'GET api/users'
         [ActionName("DefaultAction")]
-        public List<User> GetAllUsers()
+        public List<User> Get()
         {
             return us.GetUsers();
         }
 
         //finding a user by id 'GET api/users/1'
         [ActionName("DefaultAction")]
-        public User GetUser(int id)
+        public User Get(int id)
         {
             return us.GetUser(id);
         }
