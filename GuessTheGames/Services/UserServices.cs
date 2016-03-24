@@ -17,7 +17,7 @@ namespace GuessTheGames.Services
             List<User> users = new List<User>();
 
             //creating the sql string (this example is selecting all users and info)
-            string sqlstring = "SELECT * FROM public.users;";
+            string sqlstring = "SELECT * FROM users;";
             users = ReadFromDB(sqlstring);
 
             return users; 

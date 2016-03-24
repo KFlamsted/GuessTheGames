@@ -10,16 +10,6 @@ namespace GuessTheGames.Services
     public class TeamServices
     {
 
-        // get id from teamname
-        public int GetId(string teamname)
-        {
-            List<Team> teams = new List<Team>();
-            string sqlstring = "SELECT * FROM teams WHERE teamname ='" + teamname + "';";
-            teams = ReadFromDB(sqlstring);
-
-            return teams[0].id; //there should only be one 
-        }
-
         // get all teams
         public List<Team> GetAllTeams()
         {
@@ -28,7 +18,27 @@ namespace GuessTheGames.Services
             teams = ReadFromDB(sqlstring);
 
             return teams;
+        }
 
+        //get team from ID
+        public Team GetTeamByID(int id)
+        {
+            List<Team> teams = new List<Team>();
+            string sqlstring = "SELECT * FROM teams WHERE id = '" + id + "';";
+            teams = ReadFromDB(sqlstring);
+
+            return teams[0];
+
+        }
+
+        // get team from teamname
+        public Team GetTeamByName(string teamname)
+        {
+            List<Team> teams = new List<Team>();
+            string sqlstring = "SELECT * FROM teams WHERE teamname = '" + teamname + "';";
+            teams = ReadFromDB(sqlstring);
+
+            return teams[0];
         }
 
         // having a connecting to DB function with the sqlstring as input

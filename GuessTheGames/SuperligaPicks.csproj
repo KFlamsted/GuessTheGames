@@ -177,6 +177,7 @@
     <Compile Include="Models\Team.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\RoundServices.cs" />
     <Compile Include="Services\SeasonServices.cs" />
     <Compile Include="Services\TeamServices.cs" />
     <Compile Include="Services\UserServices.cs" />
