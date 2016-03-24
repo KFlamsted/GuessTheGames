@@ -13,13 +13,14 @@ namespace GuessTheGames
             //when wanting a specific action
             config.Routes.MapHttpRoute(
                  "WithActionApi",
-                 "api/{controller}/{action}/{id}"
+                 "api/{controller}/{action}/{id}/{id2}",
+                 defaults: new { id = RouteParameter.Optional, id2 = RouteParameter.Optional}
             );
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new {action = "DefaultAction", id = RouteParameter.Optional }
+                defaults: new {action = "DefaultAction", id = RouteParameter.Optional}
             );
 
             //forcing all formatting to happen in json. XML gives serilization errors

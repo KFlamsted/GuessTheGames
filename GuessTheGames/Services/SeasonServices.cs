@@ -48,19 +48,25 @@ namespace GuessTheGames.Services
         }
 
         // all seasons starting or ending in between two dates
-        public List<Season> GetSeasonsInBetween(DateTime start_date, DateTime end_date)
+        // not sure this is the best way to do it
+        public List<Season> GetSeasonsInBetween(string start_date, string end_date)
         {
-            //easier to convert the dates into ints
-            int start_day = start_date.Date.Day; //should get the day of the month
-            int start_month = start_date.Month;
-            int start_year = start_date.Year;
+            
+            /* Should be a check for the format of the string here */
+            //receiving the date strings in format 'DD-MM-YYYY'
+            string[] splitted = start_date.Split('-');
+            string start_day = splitted[0]; 
+            string start_month = splitted[1];
+            string start_year = splitted[2];
 
-            int end_day = end_date.Date.Day; //should get the day of the month
-            int end_month = end_date.Month;
-            int end_year = end_date.Year;
+            splitted = end_date.Split('-');
+
+            string end_day = splitted[0];
+            string end_month = splitted[1];
+            string end_year = splitted[2];
             
             List<Season> seasons = new List<Season>();
-            string sqlstring = "SELECT * FROM mytable WHERE (season_start_year, season_end_year) OVERLAPS ('"+start_year+"-"+start_month+"-"+start_day+"'::DATE, '"+end_year+"-"+end_month+"-"+end_day+"'::DATE);";
+            string sqlstring = "SELECT * FROM seasons WHERE (season_start_year, season_end_year) OVERLAPS ('"+start_year+"-"+start_month+"-"+start_day+"'::DATE, '"+end_year+"-"+end_month+"-"+end_day+"'::DATE);";
             seasons = ReadFromDB(sqlstring);
             return seasons;
         }

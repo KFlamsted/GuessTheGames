@@ -14,7 +14,7 @@ namespace GuessTheGames.Services
         public int GetId(string teamname)
         {
             List<Team> teams = new List<Team>();
-            string sqlstring = "SELECT * FROM teams WHERE teamname ='"+teamname+"';";
+            string sqlstring = "SELECT * FROM teams WHERE teamname ='" + teamname + "';";
             teams = ReadFromDB(sqlstring);
 
             return teams[0].id; //there should only be one 
