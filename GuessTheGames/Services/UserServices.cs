@@ -45,6 +45,17 @@ namespace GuessTheGames.Services
             return users[0];
         }
 
+        //method finding user from username
+        public User GetUserFromUsername(string username)
+        {
+            List<User> users = new List<User>();
+            string sqlstring = "SELECT * FROM users WHERE username = '" + username + "';";
+            users = ReadFromDB(sqlstring);
+
+            //returning the first user, there should only be one.
+            return users[0];
+        }
+
         // having a connecting to DB function with the sqlstring as input
         private List<User> ReadFromDB(string sqlstring)
         {
