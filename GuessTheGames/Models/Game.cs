@@ -8,12 +8,12 @@ namespace GuessTheGames.Models
     public class Game
     {
 
-        public Game(int id, int round_id, int team1, int team2, DateTime planned_date)
+        public Game(int id, Round round_id, Team team1, Team team2, DateTime planned_date)
         {
             this.id = id;
             this.round_id = round_id;
-            team1_id = team1;
-            team2_id = team2;
+            this.team1 = team1;
+            this.team2 = team2;
             this.planned_date = planned_date;
 
             //wondering if games should've been played when being defined
@@ -23,11 +23,11 @@ namespace GuessTheGames.Models
 
         public int id { get; set; }
 
-        public int round_id { get; set; }
+        public Round round_id { get; set; }
 
-        public int team1_id { get; set; }
+        public Team team1 { get; set; }
 
-        public int team2_id { get; set; }
+        public Team team2 { get; set; }
 
         public DateTime planned_date {get; set;}
 
